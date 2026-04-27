@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Analytics Dashboard</title>
+    <!-- Google Fonts for Nike/Framer Aesthetic (Inter and Playfair) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar">
+      <div class="logo">ACME <span>DATA</span></div>
+      <div class="nav-links">
+        <a href="#dashboard" class="active">Dashboard</a>
+        <a href="#recommendations">Recommendations</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="hero">
+        <h1 class="hero-title">COMPANY<br><span class="gradient-text">ANALYTICS</span></h1>
+        <p class="hero-subtitle">Intelligent workforce insights and career trajectory forecasting.</p>
+      </header>
+
+      <section class="controls glass-panel">
+        <div class="control-group">
+          <label for="companySelect">SELECT COMPANY</label>
+          <div class="custom-select">
+            <select id="companySelect">
+              <option value="" disabled selected>Loading...</option>
+            </select>
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="yearSelect">YEAR OF DATA</label>
+          <div class="custom-select">
+             <select id="yearSelect">
+              <option value="" disabled selected>Loading...</option>
+             </select>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard-grid">
+        <div class="glass-container chart-card span-2">
+          <h2>Experience Distribution</h2>
+          <div class="chart-wrapper">
+             <canvas id="experienceChart"></canvas>
+          </div>
+        </div>
+
+        <div class="glass-container chart-card span-2">
+          <h2>Salary by Role (LPA)</h2>
+          <div class="chart-wrapper">
+             <canvas id="salaryChart"></canvas>
+          </div>
+        </div>
+        
+        <div class="glass-container chart-card span-2">
+          <h2>Skill Demand</h2>
+          <div class="chart-wrapper">
+             <canvas id="skillChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section id="recommendations" class="recommendations">
+        <div class="glass-container rec-card">
+          <div class="rec-header">
+             <h2>AI Career Recommendation</h2>
+             <p>Discover top companies actively hiring for your profile</p>
+          </div>
+          
+          <div class="rec-controls">
+            <div class="control-group">
+              <label for="roleSelect">YOUR ROLE</label>
+              <select id="roleSelect">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="recSkillSelect">YOUR KEY SKILL</label>
+              <select id="recSkillSelect">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+          </div>
+
+          <div class="rec-results">
+            <h3>Top Recommended Companies:</h3>
+            <ul id="topCompaniesList" class="company-list">
+               <li>Select role and skill...</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
